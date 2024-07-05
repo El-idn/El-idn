@@ -42,7 +42,7 @@ This project is licensed under the ISC License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-Feel free to reach out to me if you have any questions or suggestions:
+Feel free to reach out, if you have any questions or suggestions:
 
 - **Email:** [amos.eden19@gmailcom](mailto:amos.eden19@gmail.com)
 - **LinkedIn:** [linkedin.com/in/amos-eden](https://www.linkedin.com/in/amos-eden)
