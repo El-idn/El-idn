@@ -5,11 +5,19 @@ body {
     background-color: #f7f7f7; /* Softer background color */
 }
 
+.container {
+    max-width: 1000px; /* Maximum width for desktop view */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Padding for inner spacing */
+}
+
 header {
     background-color: #2c3e50;
     color: white;
     text-align: center;
     padding: 1.5em 0;
+    border-radius: 10px;
+
 }
 
 nav {
@@ -17,8 +25,10 @@ nav {
     display: flex;
     justify-content: center; /* Center the navigation */
     align-items: center;
-    padding: 1em;
+    padding: 0.5em;
     position: relative;
+    border-radius: 10px;
+
 }
 
 .menu-icon {
@@ -53,8 +63,12 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+
 section {
-    padding: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.8em;
     margin: 1em;
     background-color: #ffffff;
     border-radius: 10px;
@@ -112,7 +126,6 @@ section {
     transform: scale(1.0);
     color: #ffffff;
     border-radius: 10px;
-
 }
 
 .project a {
@@ -122,7 +135,7 @@ section {
 
 button.prev, button.next {
     background-color: #34495e;
-    opacity: 20% ;
+    opacity: 20%;
     color: white;
     border: none;
     padding: 0.5em 1em;
@@ -168,19 +181,24 @@ button.prev:hover, button.next:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    margin: 10px auto;
     position: relative;
+    width: 310px; /* Container size to fit spinner */
+    height: 310px;
 }
 
 .photo-container img {
     width: 300px;
     height: 300px;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover; 
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: absolute;
-    filter: grayscale(30%) brightness(0.9) contrast(1.1); /* Adjusted values */
+    filter: grayscale(30%) brightness(0.9) contrast(1.1); 
     transition: filter 0.3s ease;
+    image-rendering: auto; /* Ensure high-quality rendering */
 }
 
 .photo-container img:hover {
@@ -188,12 +206,14 @@ button.prev:hover, button.next:hover {
 }
 
 .spinner {
-    width: 310px; /* Slightly larger than the photo */
-    height: 310px;
+    width: 100%; /* Ensure spinner matches container size */
+    height: 100%;
     border: 5px solid transparent;
     border-top: 5px solid #e21111;
     border-radius: 50%;
+    position: absolute; /* Ensure it stays centered around the image */
     animation: spin 5s linear infinite;
+    box-sizing: border-box;
 }
 
 /* Spin animation */
@@ -206,23 +226,30 @@ button.prev:hover, button.next:hover {
     }
 }
 
-footer {
-    text-align: center;
-    padding: 0.1em 0;
-    margin-top: 1em;
-    background-color: #2c3e50;
-    color: white;
-    /* position: fixed; */
-    width: 100%;
-    bottom: 0;
-}
-
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
+    .container {
+        width: 100%; /* Full width for mobile view */
+    }
+
+    .photo-container {
+        width: 210px; /* Smaller image size for mobile */
+        height: 210px;
+    }
+
+    .photo-container img {
+        width: 200px; /* Smaller image size for mobile */
+        height: 200px;
+    }
+
+    .spinner {
+        border-width: 4px; /* Adjust border size for mobile */
+    }
+
     .menu-icon {
         display: block;
-        padding: 0.2em;
+        padding: 0.2em;   
     }
 
     nav ul {
@@ -241,8 +268,6 @@ footer {
         display: block;
         padding: 1em;
         padding-right: 2.5em;
-
-        /* border-bottom: 1px solid #1abc9c; */
     }
 
     nav ul li a:hover {
@@ -253,4 +278,15 @@ footer {
     nav ul.active {
         display: flex;
     }
+}
+
+footer {
+    text-align: center;
+    padding: 0.1em 0;
+    margin-top: 1em;
+    background-color: #2c3e50;
+    color: white;
+    width: 100%;
+    bottom: 0;
+    border-radius: 10px;
 }
